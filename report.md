@@ -17,27 +17,27 @@
 
 ## 1 · The biomedical problem (15 %, with section 2)
 
-- **Clinical question:** [who would use the result, for what decision; for example "count nuclei to see whether a drug kills cells"]
-- **Task type:** [classification, segmentation, detection, regression; what goes in, what comes out]
+- **Clinical question:** Can a neural network, pre-trained on ImageNet images, identify choroidal neovascularisation and diabetic macular edema to classify the patients as "urgent referrals"?
+- **Task type:** The task includes classification of OCT scans, where an image/scan of a patient is sent to the neural network to classify it in 4 classes.
 - **Why it is hard:** [small lesions, class imbalance, variation between scanners or sites, unclear borders …]
 
 ## 2 · The data (15 %, with section 1)
 
 | | |
 |---|---|
-| Source, version, download date | [link; paper to cite] |
-| Licence | [licence, and what it allows] |
-| Modality | [CT, MRI, X-ray, ultrasound, microscopy, dermoscopy, endoscopy …; 2D or 3D] |
-| Size | [number of patients, images, voxels or pixels per image; voxel size if known (Session 10)] |
+| Source, version, download date | Data Source: https://data.mendeley.com/datasets/rscbjbr9sj/2 ; Paper: https://www.cell.com/cell/fulltext/S0092-8674(18)30154-5?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867418301545%3Fshowall%3Dtrue#fig2 ; version 2 ; downloaded on 18-11-2026 ; DOI : 10.17632/rscbjbr9sj.2  |
+| Licence | CC BY 4.0 ; The files associated with this dataset are licensed under a Creative Commons Attribution 4.0 International licence. You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party. |
+| Modality | Optical Coherence Tomography (OCT) images of the retina |
+| Size | 31971 images, used at 128 × 128 pixels |
 | Labels: who made them | [one expert, several, a lab test, follow-up, an algorithm (Session 11)] |
 | Labels: agreement | [inter-observer agreement if reported; otherwise "not reported"] |
 | Classes or targets | [counts per class, or share of foreground pixels] |
 | Splits | [training / validation / test; **by patient** if patient numbers exist (Session 7); otherwise say so] |
 | Preprocessing | [resizing, resampling, intensity windows or normalisation (statistics from the training set only)] |
 | Quality checks | [duplicates, broken files, wrong masks you found (look at 20 by eye)] |
-| Shared with Deep Learning? | [yes/no; what was done where] |
+| Shared with Deep Learning? | NO |
 
-[A figure with typical images and their labels or masks.]
+Refer to A1_examples.png in the results folder for example images.
 
 ## 3 · Experimental design (15 %)
 
