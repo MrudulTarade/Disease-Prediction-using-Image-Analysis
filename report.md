@@ -19,7 +19,10 @@
 
 - **Clinical question:** Can a neural network, pre-trained on ImageNet images, identify choroidal neovascularisation and diabetic macular edema to classify the patients as "urgent referrals"?
 - **Task type:** The task includes classification of OCT scans, where an image/scan of a patient is sent to the neural network to classify it in 4 classes.
-- **Why it is hard:** [small lesions, class imbalance, variation between scanners or sites, unclear borders …]
+- **Why it is hard:** 
+    - The dataset doesn't have a validation set.
+    - 556 images are present in the training dataset which are identical to the test dataset. 
+    - 444 patients are present in both training and testing data.
 
 ## 2 · The data (15 %, with section 1)
 
@@ -74,8 +77,10 @@ Refer to A1_examples.png in the results folder for example images.
 - [Who could be harmed by a wrong answer; what a doctor would still have to check; privacy of the data]
 
 ## 7 · Use of AI tools (5 %)
-
-[Which tools you used, for what (code, text, debugging), and how you **checked** their output. Be specific.]
+ChatGPT:
+- To modify the load folder function (classes), to exclude files (`.ipynb_checkpoints` / `__pycache__` ) as they do not contain any image. It was verified by checking the image count, which stayed the same before and after for the respective classes.
+- To handle duplicates that existed in both the training and testing data.
+- To handle repetition of the patients in training and testing data.
 
 ## 8 · Conclusion (documentation and communication, 5 %)
 
