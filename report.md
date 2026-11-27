@@ -1,4 +1,4 @@
-# [Title: the clinical question and how you answered it]
+# OCT Disease Classification for Referral Support using pretrained neural networks.
 
 **Biomedical Image Analysis · M.Sc. Applied Data Science and AI · SRH University Munich · Winter semester 2026/27**
 **Author(s):** Mrudul Tarade · **Repository:** https://github.com/MrudulTarade/Disease-Prediction-using-Image-Analysis.git · **Date:** 17-11-2026
