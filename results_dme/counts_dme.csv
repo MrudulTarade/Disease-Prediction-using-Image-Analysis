@@ -1,0 +1,5 @@
+class,train,val,test
+cnv,33500,3705,250
+dme,10177,1171,250
+drusen,7786,830,250
+normal,22511,2513,250

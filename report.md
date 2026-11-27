@@ -37,15 +37,15 @@
 | Classes or targets | `cnv 25.4% of training`, `dme 26.1% of training`, `drusen 22.2% of training`, `normal 26.3% of training` |
 | Splits | training / validation(created) / testing ; randomized patient IDs exist |
 | Preprocessing | Converting to RGB, Resizing to 128 x 128, Pixel normalization |
-| Quality checks | Duplicates found and removed from training datasets, Patient IDs found identical between sets and classes |
+| Quality checks | Duplicates found and removed from training datasets, Patient IDs found identical between sets and classes although it is kept as it is, not to compromise the training volume. |
 | Shared with Deep Learning? | NO |
 
 Refer to examples.png in the results folder for example images.
 
 ## 3 · Experimental design (15 %)
 
-- **The floor:** [the trivial answer: largest class, or "always background" (Dice 0)]
-- **Classical baseline:** [threshold, features + random forest, … (Sessions 5–6)]
+- **The floor:** always say 'cnv' -> 25.0% of the test images right, and 100% of the 'cnv' images found.
+- **Classical baseline:** baseline (color,brightness feature + random forest): accuracy 59.5%, cnv found 96.8%
 - **Deep-learning model:** [architecture, pretrained or not, 2D/2.5D/3D, loss (Dice + cross-entropy?), why]
 - **Augmentation:** [which changes, and why each one is plausible for this modality (Session 8)]
 - **Comparisons:** [one change at a time; same splits and budget; at least three seeds]
