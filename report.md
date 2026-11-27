@@ -22,7 +22,7 @@
 - **Why it is hard:** 
     - The dataset doesn't have a validation set.
     - 556 images are present in the training dataset which are identical to the test dataset. 
-    - 444 patients are present in both training and testing data.
+    - 444 patients are present in both training and testing data when verified using patient ID.
 
 ## 2 · The data (15 %, with section 1)
 
@@ -32,9 +32,9 @@
 | Licence | CC BY 4.0 ; The files associated with this dataset are licensed under a Creative Commons Attribution 4.0 International licence. You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party. |
 | Modality | Optical Coherence Tomography (OCT) images of the retina |
 | Size | 31971 images, used at 128 × 128 pixels |
-| Labels: who made them | [one expert, several, a lab test, follow-up, an algorithm (Session 11)] |
-| Labels: agreement | [inter-observer agreement if reported; otherwise "not reported"] |
-| Classes or targets | [counts per class, or share of foreground pixels] |
+| Labels: who made them | First labelled by recent diagnosis, then labelled in 4 tiers. |
+| Labels: agreement | Labels that passed through tiers, with final TRUE LABEL from 2 retinal specialists |
+| Classes or targets | `cnv 25.4% of training`, `dme 26.1% of training`, `drusen 22.2% of training`, `normal 26.3% of training` |
 | Splits | [training / validation / test; **by patient** if patient numbers exist (Session 7); otherwise say so] |
 | Preprocessing | [resizing, resampling, intensity windows or normalisation (statistics from the training set only)] |
 | Quality checks | [duplicates, broken files, wrong masks you found (look at 20 by eye)] |
