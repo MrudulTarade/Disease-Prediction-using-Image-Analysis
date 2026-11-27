@@ -35,12 +35,12 @@
 | Labels: who made them | First labelled by recent diagnosis, then labelled in 4 tiers. |
 | Labels: agreement | Labels that passed through tiers, with final TRUE LABEL from 2 retinal specialists |
 | Classes or targets | `cnv 25.4% of training`, `dme 26.1% of training`, `drusen 22.2% of training`, `normal 26.3% of training` |
-| Splits | [training / validation / test; **by patient** if patient numbers exist (Session 7); otherwise say so] |
-| Preprocessing | [resizing, resampling, intensity windows or normalisation (statistics from the training set only)] |
-| Quality checks | [duplicates, broken files, wrong masks you found (look at 20 by eye)] |
+| Splits | training / validation(created) / testing ; randomized patient IDs exist |
+| Preprocessing | Converting to RGB, Resizing to 128 x 128, Pixel normalization |
+| Quality checks | Duplicates found and removed from training datasets, Patient IDs found identical between sets and classes |
 | Shared with Deep Learning? | NO |
 
-Refer to A1_examples.png in the results folder for example images.
+Refer to examples.png in the results folder for example images.
 
 ## 3 · Experimental design (15 %)
 
@@ -52,9 +52,10 @@ Refer to A1_examples.png in the results folder for example images.
 
 ## 4 · Implementation and reproducibility (25 %)
 
-- **Run it:** [commands or notebook order; environment, for example `requirements.txt`]
-- **Seeds, hardware, training time:** […]
-- **Where the results come from:** [which notebook or script makes which table and figure]
+- **Run it:** Clone the repository and download the data from the data source mentioned in Section 2 of this report. Download is exactly 5.39GB, refer to data folder for further info.
+`DiseaseReferral_new.ipynb` notebook runs data loading, model training and evaluating. Run the first cell, with `requirements.txt`, which installs the packages required for the whole experiment.
+- **Seeds, hardware, training time:** 3 Seeds, NVIDIA 48GB GPU, around 20 - 30 minutes.
+- **Where the results come from:** `DiseaseReferral_new.ipynb` creates the results folder, where certain cells save respective results generated.
 
 ## 5 · Evaluation, validation and critical analysis (15 %)
 
@@ -79,13 +80,20 @@ Refer to A1_examples.png in the results folder for example images.
 ## 7 · Use of AI tools (5 %)
 ChatGPT:
 - To modify the load folder function (classes), to exclude files (`.ipynb_checkpoints` / `__pycache__` ) as they do not contain any image. It was verified by checking the image count, which stayed the same before and after for the respective classes.
-- To handle duplicates that existed in both the training and testing data.
-- To handle repetition of the patients in training and testing data.
+- To handle duplicates that existed in both the training and testing data, generated the code that removes the identical images only from the training data, that have a Euclidean distance of ~0.0001. It was verified by comparing the count of images present before and after removing duplicates.
+- To perform checks on patient ID distribution between training, validation and testing datasets and also among the classes. It was verified by comparing it with the research paper numbers. 
 
 ## 8 · Conclusion (documentation and communication, 5 %)
 
 [What you found, how sure you are, what you would do next.]
 
 ## References
+Kermany D, Goldbaum M, Cai W ...
+Identifying Medical Diagnoses and Treatable Diseases by Image-Based Deep Learning
+Cell, 172, 1122-1131.e9
 
-[All papers, data sets, code and websites you used.]
+Data Source: https://data.mendeley.com/datasets/rscbjbr9sj/2 
+
+Initial Code Template provided by : Prof. Dr. Judith Cerit (github: @profdrjcerit )
+
+chatgpt.com
